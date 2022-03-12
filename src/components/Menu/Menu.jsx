@@ -21,6 +21,7 @@ const Menu = () => {
   const toggleMenu = useMmodalStore((state) => state.toggleMenu)
   const addToCart = useProductStore((state) => state.addToCart)
   const cart = useProductStore((state) => state.cart)
+  const total = useProductStore((state) => state.total)
   const products = useProductStore((state) => state.products)
   const [filter, setFilter] = useState(products)
 
@@ -81,7 +82,7 @@ const Menu = () => {
       <div className="resume-container" onClick={toggleResume}>
         <div className="resume">
           <p>{cart.length} Items</p>
-          <p>$1550.00</p>
+          <p>${total}</p>
         </div>
 
         <RoomServiceIcon className="bell" />

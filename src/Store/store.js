@@ -13,9 +13,11 @@ let modalStore = (set) => ({
 let productStore = (set) => ({
   products: productsInfo,
   cart: [],
+  total: 0,
   addToCart: (item) =>
     set((state) => ({
       cart: [...state.cart, item],
+      total: [+state.total + +item.price],
     })),
 })
 
